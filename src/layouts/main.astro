@@ -1,0 +1,49 @@
+<style is:global>
+  @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+  .big-header {
+    font-size: 150px;
+    font-family: 'Caveat', cursive;
+    text-align: center;
+    color: violet;
+  }
+
+  .text {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+  }
+
+  h1 {
+    color: violet;
+  }
+
+  h2 {
+    color: violet;
+  }
+
+  body {
+    background-color: black;
+    color: white;
+  }
+
+  a {
+    color: violet;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: white;
+  }
+</style>
+
+<html>
+  <body>
+    <div style="max-width: 500px; margin: auto">
+      <div class="big-header">Hello!</div>
+      <div style="text-align:left" class="text">
+        <slot />
+      </div>
+    </div>
+  </body>
+</html>
