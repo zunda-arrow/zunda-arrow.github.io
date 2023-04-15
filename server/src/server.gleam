@@ -20,6 +20,9 @@ pub fn service(req: Request(Body)) {
     ["_astro", ..path] -> {
       serve_file(["..", "dist", "_astro", ..path])
     }
+    ["assets", filename] -> {
+      serve_file(["..", "assets", filename])
+    }
     ["blog", post] -> {
       serve_file(["..", "dist", post, "index.html"])
     }
@@ -45,6 +48,8 @@ fn serve_file(path: List(String)) {
       response.prepend_header(response, "Content-Type", "text/javascript")
     "lmth." <> _ ->
       response.prepend_header(response, "Content-Type", "text/html;charset=utf-8")
+    "pbew." <> _ -> 
+      response.prepend_header(response, "Content-Type", "image/webp")
     _ -> response
   } |>
   response.set_body(FileBody(fd, int.to_string(size), 0, size))

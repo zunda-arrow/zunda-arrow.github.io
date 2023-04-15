@@ -1,0 +1,32 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+a {
+  color: violet;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+}
+
+.markdown {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+.markdown > h1 {
+  color: violet;
+}
+
+.markdown > h2 {
+  color: violet;
+}
+
+.centered {
+  max-width: 500px;
+  margin: auto;
+}
