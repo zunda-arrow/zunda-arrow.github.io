@@ -1,9 +1,11 @@
 ---
+import "../css/global.css"
 const { frontmatter } = Astro.props;
 ---
 
 <html>
-  <h1>{frontmatter.title}</h1>
-  <slot />
-
+  <div class="markdown centered">
+    <h1 style="text-align: center">{frontmatter.title}</>
+    <slot/>
+  </div>
 </html>
