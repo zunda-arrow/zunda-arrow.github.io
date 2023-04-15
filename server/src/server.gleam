@@ -1,13 +1,15 @@
 import mist
+import gleam/list
+import gleam/string
 import gleam/http/response
 import gleam/http/request.{Request}
 import gleam/bit_string
 import mist/http.{Body, FileBody}
 import mist/file
 import mist/handler.{Response}
-import gleam/string
 import gleam/io
 import gleam/int
+import gleam/result
 import gleam/erlang/process
 
 pub fn service(req: Request(Body)) {
@@ -31,8 +33,21 @@ fn serve_file(path: List(String)) {
     |> bit_string.from_string
   let size = file.size(file_path)
   let assert Ok(fd) = file.open(file_path)
-  response.new(200)
-  |> response.set_body(FileBody(fd, int.to_string(size), 0, size))
+  let response = response.new(200)
+
+  case
+    path
+    |> list.last
+    |> result.unwrap("")
+    |> string.reverse
+  {
+    "sj." <> _ ->
+      response.prepend_header(response, "Content-Type", "text/javascript")
+    "lmth." <> _ ->
+      response.prepend_header(response, "Content-Type", "text/html;charset=utf-8")
+    _ -> response
+  } |>
+  response.set_body(FileBody(fd, int.to_string(size), 0, size))
   |> Response
 }
 
