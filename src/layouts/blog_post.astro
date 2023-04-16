@@ -5,12 +5,14 @@ const { frontmatter } = Astro.props;
 ---
 
 <html>
-  <div class="markdown centered">
+  <div class="markdown centered" style="z-index: 100">
     <h1 style="text-align: center">{frontmatter.title}</>
     <slot/>
   </div>
 
-  <div style="position:fixed; bottom: 0; left: 0;">
+  <hr>
+
+  <div style="position:fixed; bottom: 0; left: 0; z-index: 0;">
     <Gear client:only="svelte"/>
   <div/>
 </html>

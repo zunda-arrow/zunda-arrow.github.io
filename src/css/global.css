@@ -15,7 +15,9 @@ a:hover {
 
 .markdown {
   font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
   color: white;
+  position: relative;
 }
 
 .markdown > h1 {
@@ -27,6 +29,6 @@ a:hover {
 }
 
 .centered {
-  max-width: 500px;
+  max-width: 650px;
   margin: auto;
 }

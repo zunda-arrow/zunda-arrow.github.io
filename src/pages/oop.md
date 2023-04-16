@@ -1,6 +1,6 @@
 ---
 layout: ../layouts/blog_post.astro
-title: What exactly is OOP?
+title: You can't write clean code without OOP
 ---
 
 OOP is hated by a lot of programmers. They'll tell you inheritence
