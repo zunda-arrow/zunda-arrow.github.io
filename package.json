@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "astro build",
+    "dev": "astro dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

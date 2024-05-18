@@ -13,7 +13,6 @@
 
   setInterval(() => {
     scrollPercent = getScrollPercent();
-    console.log(scrollPercent);
   }, 5);
 </script>
 
