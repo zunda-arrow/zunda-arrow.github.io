@@ -3,6 +3,7 @@ import svelte from "@astrojs/svelte";
 import mdx from "@astrojs/mdx";
 
 export default defineConfig({
+  site: 'https://lunarmagpie.github.io',
   markdown: {
     drafts: true,
   },
