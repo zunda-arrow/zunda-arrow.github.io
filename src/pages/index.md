@@ -14,7 +14,10 @@ If you would like file a bug with one of my project, I would prefer if you creat
 # Open Source
 
 ## My Applications
-[aporia](https://github.com/Lunarmagpie/aporia) - A login manager for x11 and wayland desktops.
+[Hermitcraft TCG](https://github.com/hc-tcg/hc-tcg) - An online implementation of the card game from the SMP Hermitcraft. I am
+a maintainer for this project.
+
+[Aporia](https://github.com/Lunarmagpie/aporia) - A login manager for x11 and wayland desktops.
 
 [desktop-thingies](https://github.com/Lunarmagpie/desktop-thingies) - A fun tool to put physics objects on your desktop.
 
@@ -25,3 +28,4 @@ If you would like file a bug with one of my project, I would prefer if you creat
 
 ## My Blog Posts
 [Launching the Aporia Login Manager](/blog/aporia)
+

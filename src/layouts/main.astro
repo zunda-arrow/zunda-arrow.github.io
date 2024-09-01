@@ -1,5 +1,6 @@
 ---
 import "../css/global.css"
+import Gear from "../components/Gear.svelte"
 ---
 
 <style is:global>
@@ -17,9 +18,12 @@ import "../css/global.css"
   <body>
     <div class="centered">
       <div class="big-header">Hello!</div>
-      <div style="text-align:left" class="markdown">
+      <div style="text-align:left; z-index: 100;" class="markdown">
         <slot />
       </div>
     </div>
+    <div style="position:fixed; bottom: 0; left: 0; z-index: 0;">
+       <Gear client:only="svelte"/>
+    <div/>
   </body>
 </html>
