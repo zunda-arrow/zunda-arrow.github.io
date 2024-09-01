@@ -26,6 +26,7 @@ a maintainer for this project.
 
 [sigparse](https://github.com/Lunarmagpie/sigparse) - Backparts Python 3.10 typing features into Python 3.7, 3.8, and 3.9.
 
+<!---
 ## My Blog Posts
 [Launching the Aporia Login Manager](/blog/aporia)
-
+-->
