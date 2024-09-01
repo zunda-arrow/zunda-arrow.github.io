@@ -4,12 +4,17 @@ body {
 }
 
 a {
-  color: violet;
+  color: white;
   font-weight: bold;
   text-decoration: none;
 }
 
 a:hover {
+  color: white;
+  text-decoration-line: underline;
+}
+
+hr {
   color: white;
 }
 
@@ -21,11 +26,11 @@ a:hover {
 }
 
 .markdown > h1 {
-  color: violet;
+  color: white;
 }
 
 .markdown > h2 {
-  color: violet;
+  color: white;
 }
 
 .centered {

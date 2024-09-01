@@ -3,13 +3,16 @@ layout: ../layouts/main.astro
 ---
 
 # About Me
-Hello, I'm Jacob Haussman. I am a computer science major at Franlin & Marshall College. Additionally I am minoring in theoretical mathematics and Japanese.
+Hello, I'm Jacob Haussman. I am a Computer Science Major with a Minor in Japanese and Theoretical Mathematics.
+I prefer my code to be functionally terrible than inherently bad. My favorite food is Spaghetti and Meatballs.
 
 I host my code on [Github](https://github.com/lunarmagpie).
 
 ## Contact Me
 My preferred method of contact is email. Please email me at [jacob.haussman@gmail.com](mailto:jacob.haussman@gmail.com).
 If you would like file a bug with one of my project, I would prefer if you create a issue on github!
+
+<hr>
 
 # Open Source
 
@@ -25,6 +28,8 @@ a maintainer for this project.
 [hikari-crescent](https://github.com/hikari-crescent/hikari-crescent) - A framework built on hikari to help make discord bots.
 
 [sigparse](https://github.com/Lunarmagpie/sigparse) - Backparts Python 3.10 typing features into Python 3.7, 3.8, and 3.9.
+
+<hr>
 
 <!---
 ## My Blog Posts
