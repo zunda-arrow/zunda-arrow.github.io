@@ -17,6 +17,6 @@
   <div
     style="transform: rotate({rotation}turn); transform-origin: center;"
   >
-    <img src="/src/assets/gear.webp" alt="A gear." />
+    <img src="/assets/gear.webp" alt="A gear." />
   </div>
 </div>
