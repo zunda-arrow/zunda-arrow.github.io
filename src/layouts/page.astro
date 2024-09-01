@@ -1,0 +1,30 @@
+---
+import "../css/global.css"
+import Gear from "../components/Gear.svelte"
+---
+<style>
+	.header {
+	  position: sticky;
+		top: 0;
+		text-align: left;
+		z-index: 100;
+	}
+</style>
+
+<html>
+  <body>
+		<div class="header">
+    		<div>
+    			<a href="/">Home</a>
+					|
+    			<a href="/blog/">Blog</a>
+    		</div>
+		</div>
+
+    <slot />
+    <div style="position:fixed; bottom: 0; left: 0; z-index: -1;">
+       <Gear client:only="svelte"/>
+    <div/>
+  </body>
+</html>
+

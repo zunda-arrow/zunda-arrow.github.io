@@ -1,4 +1,5 @@
 ---
+import Layout from '../layouts/page.astro'
 import "../css/global.css"
 import Gear from "../components/Gear.svelte"
 ---
@@ -14,7 +15,7 @@ import Gear from "../components/Gear.svelte"
   }
 </style>
 
-<html>
+<Layout>
   <body>
     <div class="centered">
       <div class="big-header">Hello!</div>
@@ -26,4 +27,4 @@ import Gear from "../components/Gear.svelte"
        <Gear client:only="svelte"/>
     <div/>
   </body>
-</html>
+</Layout>

@@ -16,7 +16,7 @@ that goal.
 
 ## Aporia 0.1.0
 
-Today, i'm launching Aporia 0.1.0. After a look of work and testing from myself its become pretty stable. Aporia has
+Today, I'm launching Aporia 0.1.0. After a look of work and testing from myself its become pretty stable. Aporia has
 nice features like Automatic desktop detection, and I believe Aporira has the simplest way to add your own desktop
 session launch scripts out of any window manager. On my laptop, I haven't picked an ascii-background yet, but I
 still use Aporia just for this feature. Please use the project and email me a picture!
@@ -38,7 +38,7 @@ at you Rust).
 I also found CGO incredibly simple to work with. I have heard that Cgo is difficult to use but I have to disagree. As
 someone who was new to Go and had very limited experience with C, I found it quite easy to work with. Because Cgo does
 not include any custom syntax the examples simply make sense. The only "gacha" I ran into when working with Cgo is that
-you can not pass lambda functions as an argument to a C function. Fortunately you can use static functions as callbacks
+you can not pass lambda functions as an argument to a C function. Fortunately static functions can be passed as callbacks
 so it is not a big issue.
 
 ## Dbus and X11
@@ -48,5 +48,9 @@ initally included the line `unset DBUS_SESSION_BUS_ADDRESS`. This clearly breaks
 of pain. I do not know why the startx script includes this line, as disabling fixed all the issues I was having with
 X11 and dbus. X11 has the most bespoke and confusing way of starting a process as well, which is why I decided to ship Aporia with a
 modified version of startx instead of programming the launch script myself. Why can't it just be simple like Wayland? Mcookie does
-nothing useful.
+nothing useful. X11 support was legitmately the biggest time cost on this project and I didn't know go before I started this project.
+
+## In Conclusion
+
+Please give my login manager a shot! Its good I swear.
 

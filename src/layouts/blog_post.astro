@@ -1,16 +1,14 @@
 ---
+import Layout from '../layouts/page.astro'
 import "../css/global.css"
 import Gear from "../components/Gear.svelte"
 const { frontmatter } = Astro.props;
 ---
 
-<html>
+<Layout>
   <div class="markdown centered" style="z-index: 100">
     <h1 style="text-align: center">{frontmatter.title}</>
+    <hr>
     <slot/>
   </div>
-
-  <div style="position:fixed; bottom: 0; left: 0; z-index: 0;">
-    <Gear client:only="svelte"/>
-  <div/>
-</html>
+</Layout>
