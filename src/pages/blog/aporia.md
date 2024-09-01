@@ -4,7 +4,7 @@ title: Introduting Aporia, a Window Manager for X11 and Wayland
 published-on: 09/01/2024
 ---
 
-Two years ago, I started development of my window manager, [Aporia](https://github.com/Lunarmagpie/aporia).
+A bit over a year ago, I started development of my window manager, [Aporia](https://github.com/Lunarmagpie/aporia).
 As someone who loves the command line, I wanted to be able to log in without a graphical interface but none of the
 options at the time had the visuals that I wanted. Although I love the progrom [Ly](https://github.com/fairyglade/ly)
 written by FairyGlade, the visuals became boring to me after a while. I was also wanting to do something above my skill
@@ -47,10 +47,11 @@ I feel I need to dedicate a section to complaining about dbus and x11. The start
 initally included the line `unset DBUS_SESSION_BUS_ADDRESS`. This clearly breaks dbus and caused me quite a large amount
 of pain. I do not know why the startx script includes this line, as disabling fixed all the issues I was having with
 X11 and dbus. X11 has the most bespoke and confusing way of starting a process as well, which is why I decided to ship Aporia with a
-modified version of startx instead of programming the launch script myself. Why can't it just be simple like Wayland? Mcookie does
-nothing useful. X11 support was legitmately the biggest time cost on this project and I didn't know go before I started this project.
+modified version of startx instead of programming the launch script myself. Why can't it just be simple like Wayland?
+X11 support was legitmately the biggest time cost on this project and I didn't know go before I started this project.
 
-## In Conclusion
+## Try it out Yourself
 
-Please give my login manager a shot! Its good I swear.
+Give my login manager a shot, its pretty good! You can install it with the
+[instructions in the README](https://github.com/Lunarmagpie/aporia?tab=readme-ov-file#compilation--installtion).
 
