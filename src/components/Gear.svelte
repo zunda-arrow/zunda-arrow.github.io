@@ -1,6 +1,4 @@
 <script>
-  console.log(document);
-
   $: rotation = 0;
 
   function getRotation() {
@@ -17,14 +15,7 @@
     transform: scale(25%) translate(-45%, 45%);
     transform-origin: bottom left;
     filter: brightness(0) invert(100%);
-    visibility: visible;
 	}
-
-  @media (orientation: portrait) {
-  	.gear {
-      visibility: hidden;
-    }
-  }
 </style>
 
 <div class="gear">
