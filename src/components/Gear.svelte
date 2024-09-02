@@ -4,7 +4,6 @@
   $: rotation = 0;
 
   function getRotation() {
-    console.info(document.documentElement.scrollTop * .0005)
     return document.documentElement.scrollTop * .0005;
   }
 
@@ -13,7 +12,22 @@
   }, 5);
 </script>
 
-<div style="transform: scale(25%) translate(-45%, 45%); transform-origin: bottom left; filter: brightness(0) invert(100%);">
+<style>
+	.gear {
+    transform: scale(25%) translate(-45%, 45%);
+    transform-origin: bottom left;
+    filter: brightness(0) invert(100%);
+    visibility: visible;
+	}
+
+  @media (orientation: portrait) {
+  	.gear {
+      visibility: hidden;
+    }
+  }
+</style>
+
+<div class="gear">
   <div
     style="transform: rotate({rotation}turn); transform-origin: center;"
   >
