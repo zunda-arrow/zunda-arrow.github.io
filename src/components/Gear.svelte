@@ -13,7 +13,7 @@
   }, 5);
 </script>
 
-<div style="transform: scale(20%) translate(-50%, 50%); transform-origin: bottom left">
+<div style="transform: scale(25%) translate(-45%, 45%); transform-origin: bottom left; filter: brightness(0) invert(100%);">
   <div
     style="transform: rotate({rotation}turn); transform-origin: center;"
   >

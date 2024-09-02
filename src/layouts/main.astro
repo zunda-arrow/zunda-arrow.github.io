@@ -11,7 +11,7 @@ import Gear from "../components/Gear.svelte"
     font-size: 150px;
     font-family: 'Caveat', cursive;
     text-align: center;
-    color: #729437;
+    color: violet;
   }
 </style>
 
@@ -23,8 +23,5 @@ import Gear from "../components/Gear.svelte"
         <slot />
       </div>
     </div>
-    <div style="position:fixed; bottom: 0; left: 0; z-index: 0;">
-       <Gear client:only="svelte"/>
-    <div/>
   </body>
 </Layout>

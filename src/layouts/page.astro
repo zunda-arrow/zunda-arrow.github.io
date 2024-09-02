@@ -25,6 +25,11 @@ import Gear from "../components/Gear.svelte"
     <div style="position:fixed; bottom: 0; left: 0; z-index: -1;">
        <Gear client:only="svelte"/>
     <div/>
+    <div style="position:fixed; bottom: 100%; left: 100%; z-index: 0">
+      <div style="transform: scale(70%) translate(-22%, 22%)">
+       <Gear client:only="svelte"/>
+      </div>
+    <div/>
   </body>
 </html>
 
