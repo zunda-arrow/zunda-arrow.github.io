@@ -1,0 +1,105 @@
+---
+layout: ../../layouts/blog_post.astro
+title: Beginner Formatting Mistakes in Code
+published-on: 09/14/2024
+---
+import Tab from '../../components/Tabs.svelte';
+import TabbedItem from '../../components/Tabs.svelte';
+
+
+I have been working as a computer science TA for the last two semesters. My job is to give student's
+homework a prelimiary grade to save time for the prefessors. Currently that means I am grading about
+25 C++ per weak. I noticed that most students make the same code formatting mistakes that can be easily
+fixed.
+
+This blog post will go over common beginner errors and how to fix them.
+
+- Too much whitespace
+- Extra tabs
+- Line breaks after if
+- Return is in the wrong paragraph
+- IO too deep in program
+- Not using guards
+- Unnecisary copies
+
+
+## Too much whitespace
+
+Many students submit assignments with whitespace at the begginning and end of functions and other blocks.
+
+<Tab client:idle>
+		<div slot="Incorrect">
+    ```ts
+    function main() {
+
+    	let a = 5
+    	let b = 10
+    	return a + b
+
+
+    }
+    ```
+		</div>
+
+		<div slot="Correct">
+    ```ts
+    function main() {
+    	let a = 5
+    	let b = 10
+    	return a + b
+    }
+    ```
+		</div>
+</Tab>
+
+## Incorrect Tabs
+
+A common mistake is placing too many or too little tabs at the beginning on a line.
+
+<Tab client:idle>
+		<div slot="Incorrect">
+    ```ts
+    function main() {
+  	let a = 5
+  	let b = 10
+  	return a + b
+    }
+    ```
+		</div>
+
+		<div slot="Correct">
+    ```ts
+    function main() {
+    	let a = 5
+    	let b = 10
+    	return a + b
+    }
+    ```
+		</div>
+</Tab>
+
+## Line Breaks after If-Statements
+
+<Tab client:idle>
+		<div slot="Incorrect">
+    ```ts
+    if (a == b) {
+      console.log("a == b!")
+    }
+
+    else {
+      console.log("a != b")
+    }
+    ```
+		</div>
+
+		<div slot="Correct">
+    ```ts
+    if (a == b) {
+      console.log("a == b!")
+    } else {
+      console.log("a != b")
+    }
+    ```
+		</div>
+</Tab>
