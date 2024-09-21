@@ -38,7 +38,15 @@ hr {
   color: white;
 }
 
-.centered {
-  max-width: 650px;
-  margin: auto;
+@media (orientation: landscape) {
+    .centered {
+      max-width: 650px;
+      margin: auto;
+    }
+}
+
+@media (orientation: portrait) {
+    .centered {
+      margin: auto;
+    }
 }

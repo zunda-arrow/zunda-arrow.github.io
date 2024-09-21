@@ -17,4 +17,6 @@ sure what a backend dev does, Compiler Developers know what a monad is, and Reac
 There seems to be a disconnect between how developers categorize themselves and what I enjoy. How is it
 possible I either hate what the category does or am not knowleddgeable to do it, yet I still enjoy programming?
 
+I do not belive that catagizing people as a certain developer category is a good idea.
+
 

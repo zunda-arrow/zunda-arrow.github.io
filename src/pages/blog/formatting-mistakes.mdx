@@ -103,3 +103,43 @@ A common mistake is placing too many or too little tabs at the beginning on a li
     ```
 		</div>
 </Tab>
+
+# IO too deep
+
+A common problem new programmers run into is IO functions being too deep in the program.
+I see a lot of studnets placing their IO functions in a called function instead of the
+main function.
+
+<Tab client:idle>
+		<div slot="Incorrect">
+    ```ts
+    function add(): int {
+      let a = input("a:")
+      let b = input("b:")
+
+      return a + b
+    }
+
+    function main() {
+      print(add())
+    }
+
+    ```
+		</div>
+
+		<div slot="Correct">
+    ```ts
+    function add(a: int, b: int): int {
+      return a + b
+    }
+
+    function main() {
+      let a = input("a:")
+      let b = input("b:")
+
+      print(add(a, b))
+    }
+    ```
+		</div>
+</Tab>
+
