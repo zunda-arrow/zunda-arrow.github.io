@@ -24,6 +24,8 @@ a maintainer for this project.
 
 [desktop-thingies](https://github.com/Lunarmagpie/desktop-thingies) - A fun tool to put physics objects on your desktop.
 
+[Io](https://github.com/Lunarmagpie/io) - A small discord bot for running code or seeing the assembly output. Built with Piston and Compiler Explorer.
+
 ## My Libraries
 [hikari-crescent](https://github.com/hikari-crescent/hikari-crescent) - A framework built on hikari to help make discord bots.
 
