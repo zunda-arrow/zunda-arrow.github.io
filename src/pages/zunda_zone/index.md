@@ -4,6 +4,6 @@ title: ずんだゾーン (Zunda Zone)
 ---
 
 <p align="center">
-  <img src="/public/assets/zunda_mochi.png" />
+  <img src="/assets/zunda_mochi.png" />
 </p>
 
