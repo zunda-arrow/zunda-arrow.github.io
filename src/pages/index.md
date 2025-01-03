@@ -29,7 +29,7 @@ a maintainer for this project.
 ## My Libraries
 [hikari-crescent](https://github.com/hikari-crescent/hikari-crescent) - A framework built on hikari to help make discord bots.
 
-[sigparse](https://github.com/zunda-arrow/sigparse) - Backparts Python 3.10 typing features into Python 3.7, 3.8, and 3.9.
+[sigparse](https://github.com/zunda-arrow/sigparse) - Backports Python 3.10 typing features into Python 3.7, 3.8, and 3.9.
 
 <hr>
 
