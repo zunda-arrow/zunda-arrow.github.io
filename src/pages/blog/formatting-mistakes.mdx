@@ -12,16 +12,14 @@ homework a prelimiary grade to save time for the prefessors. Currently that mean
 20 C++ projects per weak. I noticed that most students make the same code mistakes that can be easily
 fixed.
 
-This blog post will go over common beginner errors and how to fix them.
+This blog post will go over common beginer errors and how to fix them.
 
-- IO too deep in program
-- Not using guards
-- Unnecisary copies
+## Style Issues
 
+Beginner programmers make many of the same style mistakes with their code. In this section, I will go over
+a few common ones with easy fixes.
 
-## Too much whitespace
-
-Many students submit assignments with whitespace at the begginning and end of functions and other blocks.
+### Too much whitespace
 
 <Tab client:idle>
 		<div slot="Incorrect">
@@ -48,9 +46,10 @@ Many students submit assignments with whitespace at the begginning and end of fu
 		</div>
 </Tab>
 
-## Incorrect Tabs
+Many students submit assignments with whitespace at the begginning and end of functions and other blocks.
+The fix is to start and end each function with a line of code.
 
-A common mistake is placing too many or too little tabs at the beginning on a line.
+### Incorrect Whitespace Amount at The Start Of Lines
 
 <Tab client:idle>
 		<div slot="Incorrect">
@@ -74,7 +73,13 @@ A common mistake is placing too many or too little tabs at the beginning on a li
 		</div>
 </Tab>
 
-## Line Breaks after If-Statements
+A common mistake is placing too many or too little tabs at the beginning on a line.
+Make sure that all code follows the C++ language standard. This is important to make sure
+all readers understand your code with the least amount of friction possible.
+
+### Inconsistent Whitespace
+
+### Line Breaks after If-Statements
 
 <Tab client:idle>
 		<div slot="Incorrect">
@@ -100,11 +105,9 @@ A common mistake is placing too many or too little tabs at the beginning on a li
 		</div>
 </Tab>
 
-# IO too deep
+## "Programmatic Issues"
 
-I see a lot of studnets placing their IO functions in a called function instead of the
-main function. In this example, I show an incorrect function that asks the user for an
-input. This makes the function more difficult to understand and to test.
+# IO too deep
 
 <Tab client:idle>
 		<div slot="Incorrect">
@@ -138,6 +141,10 @@ input. This makes the function more difficult to understand and to test.
     ```
 		</div>
 </Tab>
+
+I see a lot of studnets placing their IO functions in a called function instead of the
+main function. In this example, I show an incorrect function that asks the user for an
+input. This makes the function more difficult to understand and to test.
 
 By moving asking the user for an input to the main function we have two advangaes:
 
