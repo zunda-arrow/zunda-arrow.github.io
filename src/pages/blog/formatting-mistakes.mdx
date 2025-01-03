@@ -9,15 +9,11 @@ import TabbedItem from '../../components/Tabs.svelte';
 
 I have been working as a computer science TA for the last two semesters. My job is to give student's
 homework a prelimiary grade to save time for the prefessors. Currently that means I am grading about
-25 C++ per weak. I noticed that most students make the same code formatting mistakes that can be easily
+20 C++ projects per weak. I noticed that most students make the same code mistakes that can be easily
 fixed.
 
 This blog post will go over common beginner errors and how to fix them.
 
-- Too much whitespace
-- Extra tabs
-- Line breaks after if
-- Return is in the wrong paragraph
 - IO too deep in program
 - Not using guards
 - Unnecisary copies
@@ -106,9 +102,9 @@ A common mistake is placing too many or too little tabs at the beginning on a li
 
 # IO too deep
 
-A common problem new programmers run into is IO functions being too deep in the program.
 I see a lot of studnets placing their IO functions in a called function instead of the
-main function.
+main function. In this example, I show an incorrect function that asks the user for an
+input. This makes the function more difficult to understand and to test.
 
 <Tab client:idle>
 		<div slot="Incorrect">
@@ -142,4 +138,9 @@ main function.
     ```
 		</div>
 </Tab>
+
+By moving asking the user for an input to the main function we have two advangaes:
+
+	- The function `add` does exactly what the title name says
+	- We can now test `add` without needing to worry about the asking for an input step.
 
