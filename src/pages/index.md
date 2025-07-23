@@ -9,7 +9,7 @@ I prefer my code to be functionally terrible than inherently bad. My favorite fo
 I host my code on [Github](https://github.com/zunda-arrow).
 
 ## Contact Me
-My preferred method of contact is email. Please email me at [jacob.haussman@gmail.com](mailto:jacob.haussman@gmail.com).
+My preferred method of contact is email. Please email me at [mailme@jacobhaussman.online](mailto:mailme@jacobhaussman.online).
 If you would like file a bug with one of my project, I would prefer if you create a issue on github!
 
 <hr>
