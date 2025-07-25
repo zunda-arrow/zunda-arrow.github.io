@@ -4,13 +4,12 @@ layout: ../layouts/main.astro
 
 # About Me
 Hello, I'm Jacob Haussman. I am a Computer Science Major with a Minor in Japanese and Theoretical Mathematics.
-I prefer my code to be functionally terrible than inherently bad. My favorite food is Spaghetti and Meatballs.
 
-I host my code on [Github](https://github.com/zunda-arrow).
+I host my code on [Github](https://github.com/zunda-arrow) and [Codeberg](https://codeberg.org/zunda-arrow).
 
 ## Contact Me
 My preferred method of contact is email. Please email me at [mailme@jacobhaussman.online](mailto:mailme@jacobhaussman.online).
-If you would like file a bug with one of my project, I would prefer if you create a issue on github!
+If you would like file a bug with one of my projects, I would prefer if you create a issue on github!
 
 <hr>
 
@@ -31,9 +30,19 @@ a maintainer for this project.
 
 [sigparse](https://github.com/zunda-arrow/sigparse) - Backports Python 3.10 typing features into Python 3.7, 3.8, and 3.9.
 
+## Other Contributions
+[gleam](https://gleam.run/) - I implemented the module running feature for this language.
+
 <hr>
 
-<!---
-## My Blog Posts
-[Launching the Aporia Login Manager](/blog/aporia)
--->
+# Blog
+
+Please take a look at my [blog](/blog/)! It is mainly focused on programming.
+
+<hr>
+
+# Animals
+
+Please send animal pictures and videos to [mailme@jacobhaussman.online](mailto:mailme@jacobhaussman.online).
+I am planning to have an Animal section on my site.
+
