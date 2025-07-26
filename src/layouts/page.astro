@@ -4,52 +4,51 @@ import Gear from "../components/Gear.svelte";
 ---
 <style>
 	.header {
-	  position: sticky;
+		position: sticky;
 		top: 0;
 		text-align: left;
 		z-index: 10;
-		color: black;
 	}
 
 	@media (orientation: portrait) {
-  	.header {
-    	background-color: black;
-  	}
+	  	.header {
+	    	background-color: black;
+	  	}
 
-  	.headerBorder {
-    	width: 100%;
-		  padding: 2px;
-    	border-bottom: 2px solid white;
-  	}
+	  	.headerBorder {
+	    	width: 100%;
+	    	padding: 2px;
+	    	border-bottom: 2px solid white;
+	  	}
 	}
 
 	@media (orientation: portrait) {
-  	.desktopGear {
-      visibility: hidden;
-    }
+	  	.desktopGear {
+	      visibility: hidden;
+	    }
 	}
 
 	@media (orientation: landscape) {
-  	.desktopGear {
-      visibility: visible;
-    }
+	  	.desktopGear {
+	      visibility: visible;
+	    }
 	}
 </style>
 
 <html>
   <body>
 		<div class="header">
-    	<div>
-    		<a href="/">Home</a>
-				|
-    		<a href="/blog/">Blog</a> <a href="/rss.xml">(rss)</a>
-	    		|
-    		<a href="/zunda_zone/">Zunda Zone</a>
-	    		|
-    		<a href="https://shring.ficd.sh/jacobhaussman/previous"> {"<"} </a>
-    		<a href="https://shring.ficd.sh"> shring </a>
-    		<a href="https://shring.ficd.sh/jacobhaussman/next"> {">"} </a>
-    	</div>
+			<div>
+				<a href="/">Home</a>
+					|
+				<a href="/blog/">Blog</a> <a href="/rss.xml">(rss)</a>
+					|
+				<a href="/zunda_zone/">Zunda Zone</a>
+					|
+				<a href="https://shring.sh/jacobhaussman/previous"> {"<"} </a>
+				<a href="https://shring.sh"> shring </a>
+				<a href="https://shring.sh/jacobhaussman/next"> {">"} </a>
+			</div>
 		  <div class="headerBorder"/>
 		</div>
 
