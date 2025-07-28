@@ -48,5 +48,6 @@ hr {
 @media (orientation: portrait) {
     .centered {
       margin: auto;
+      max-width: 90%;
     }
 }
