@@ -46,5 +46,5 @@ Please take a look at my [blog](/blog/)! It is mainly focused on programming.
 # Animals
 
 Please send animal pictures and videos to [mailme@jacobhaussman.online](mailto:mailme@jacobhaussman.online).
-I am planning to have an Animal section on my site.
+Your picture might be added to the animals tab!
 
