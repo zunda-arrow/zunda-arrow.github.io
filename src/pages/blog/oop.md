@@ -3,21 +3,21 @@ layout: ../../layouts/blog_post.astro
 title: You can't write clean code without OOP
 ---
 
-OOP is hated by a lot of programmers. They'll tell you inheritence
+OOP is hated by a lot of programmers. They'll tell you inheritance
 produces bad code, or that objects hide control flow. I think this
 misses the point of object-oriented programming. Its a paradeigm
 that helps you encapsulate side effects by using "message-passing"
 to help improve legibility of code.
 
-## OOP isn't about Inheritence
+## OOP isn't about Inheritance
 Nobody likes inheritene.
 
 
 ## What exactly is message passing?
 An obvious form a message passing is communication between a client
 and server. When the server sends a message to the client it doesn't know
-whats going on in the client's code. It is just expacted a message to
-be recieved based on a **predefined protocol**. Similarly the client
+what's going on in the client's code. It is just expacted a message to
+be received based on a **predefined protocol**. Similarly the client
 will expect messages from the server based on a protocol. It doesn't
 need to know the inner workings of the server.
 
@@ -53,7 +53,7 @@ changes are extremely powerful when used properly though.
 
 Lets say that the client wants to keep track of the amount of messages
 that the server sent to it. It would be ludicrous for our server to
-worry about that because the amount of messages the client recieved
+worry about that because the amount of messages the client received
 doesn't matter to the server. So lets make a new `send_message` function:
 
 ```python
@@ -81,9 +81,9 @@ All objects should only mutate themselves internally. To an observer there
 shouldn't be a change.
 
 
-## A word about Inheritence
-Fuck inheritence.
+## A word about Inheritance
+Fuck inheritance.
 
 
 ## Conclusion
-In conclusion OOP is based for scaleable software.
+In conclusion OOP is based for scalable software.

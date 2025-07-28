@@ -10,7 +10,7 @@ options at the time had the visuals that I wanted. Although I love the progrom [
 written by FairyGlade, the visuals became boring to me after a while. I was also wanting to do something above my skill
 level so this project seemed to be a good fit.
 
-Aporia is desinged for one feature: displaying ascii art in the background when you log in. The most important part
+Aporia is designed for one feature: displaying ascii art in the background when you log in. The most important part
 of using Linux is to make your computer look like a hacker's computer, and I think this project totally smashes
 that goal.
 
@@ -44,7 +44,7 @@ so it is not a big issue.
 ## Dbus and X11
 
 I feel I need to dedicate a section to complaining about dbus and x11. The startx script that shipped with Popos back when I developed Aporia
-initally included the line `unset DBUS_SESSION_BUS_ADDRESS`. This clearly breaks dbus and caused me quite a large amount
+initially included the line `unset DBUS_SESSION_BUS_ADDRESS`. This clearly breaks dbus and caused me quite a large amount
 of pain. I do not know why the startx script includes this line, as disabling fixed all the issues I was having with
 X11 and dbus. X11 has the most bespoke and confusing way of starting a process as well, which is why I decided to ship Aporia with a
 modified version of startx instead of programming the launch script myself. Why can't it just be simple like Wayland?
