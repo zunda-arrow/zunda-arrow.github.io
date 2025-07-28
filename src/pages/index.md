@@ -33,6 +33,8 @@ a maintainer for this project.
 ## Other Contributions
 [gleam](https://gleam.run/) - I implemented the module running feature for this language.
 
+[ringfairy](https://github.com/k3rs3d/ringfairy) - Various features to help run shring more easily.
+
 <hr>
 
 # Blog
