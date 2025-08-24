@@ -16,14 +16,17 @@ If you would like file a bug with one of my projects, I would prefer if you crea
 # Open Source
 
 ## My Applications
-[Hermitcraft TCG](https://github.com/hc-tcg/hc-tcg) - An online implementation of the card game from the SMP Hermitcraft. I am
-a maintainer for this project.
-
 [Aporia](https://github.com/zunda-arrow/aporia) - A login manager for x11 and wayland desktops.
 
 [desktop-thingies](https://github.com/zunda-arrow/desktop-thingies) - A fun tool to put physics objects on your desktop.
 
 [Io](https://github.com/zunda-arrow/io) - A small discord bot for running code or seeing the assembly output. Built with Piston and Compiler Explorer.
+
+## Games
+[Hermitcraft TCG](https://github.com/hc-tcg/hc-tcg) - An online implementation of the card game from the SMP Hermitcraft. I am
+a maintainer for this project.
+
+[Crab Castle](https://jacobhaussman.itch.io/crab-castle) - A tower defense game made for Chili Game Jam #3.
 
 ## My Libraries
 [hikari-crescent](https://github.com/hikari-crescent/hikari-crescent) - A framework built on hikari to help make discord bots.
