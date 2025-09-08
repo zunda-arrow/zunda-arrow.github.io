@@ -26,7 +26,7 @@ If you would like file a bug with one of my projects, I would prefer if you crea
 [Hermitcraft TCG](https://github.com/hc-tcg/hc-tcg) - An online implementation of the card game from the SMP Hermitcraft. I am
 a maintainer for this project.
 
-[Crab Castle](https://jacobhaussman.itch.io/crab-castle) - A tower defense game made for Chili Game Jam #3.
+[Crab Castle](https://jacobhaussman.itch.io/crab-castle) - A tower defense game made for Chili Game Jam #3. Placed 5th place out of 99 submissions.
 
 ## My Libraries
 [hikari-crescent](https://github.com/hikari-crescent/hikari-crescent) - A framework built on hikari to help make discord bots.
