@@ -14,7 +14,7 @@
 	.gear {
     transform: scale(25%) translate(-45%, 45%);
     transform-origin: bottom left;
-    filter: brightness(0) invert(100%);
+    filter: invert(88%) sepia(58%) saturate(0%) hue-rotate(140deg) brightness(98%) contrast(69%);
 	}
 </style>
 
