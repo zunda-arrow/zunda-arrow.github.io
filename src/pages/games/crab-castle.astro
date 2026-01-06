@@ -5,10 +5,12 @@ import Gear from "../components/Gear.svelte"
 const { frontmatter } = Astro.props;
 ---
 <Layout>
+  <br>
   <div style="display: flex; justify-content: center; align-items: middle; z-index: 10000;">
       <body>
-         <embed style="z-index: 100000" type="text/html" src="/assets/games/crab-castle/index.html" width="960" height="540">
+         <iframe allowFullscreen style="z-index: 100" type="text/html" src="/assets/games/crab-castle/index.html" width="960" height="540" frameborder="0"/>
       </body>
   </div>
+
 </Layout>
 
