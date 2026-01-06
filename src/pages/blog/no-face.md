@@ -3,8 +3,6 @@ layout: ../../layouts/blog_post.astro
 title: No Face and The Journey Enlightenment
 published-on: 12/11/2025
 ---
-
-
 In the Movie "Spirited Away" by Hayao Miyazaki, No-Face is a spirit with a strange obsession with Chihiro.
 No-Face's upper body
 
@@ -43,6 +41,17 @@ that the final stop of the train is at.
 ## No-Faces Journey
 No-Faces journey starts from the bath house and ends at Zeniba's place. I do not think that No-Face achieves enlightenment
 during the movie, we only see his first few steps after being reborn in the realm of gods.
+No-Face is surrounded by greed at the beginning of the movie, and is infactuated by Chihiro the  first moment he sees her.
+I belive this is because Chihiro is a pure soul.
+Unlike the other characters on the bath house island, she can not be swayed by No-Face's fake gold.
+
+When no-face first enters the bath house as a customer, he gives out fake gold to the staff to get everything he wants.
+
+When Chihiro feeds No-Face a bitter dango (苦団子), No-Face is forced to vomit everything up he took from the bath house.
+At first No-Face is angry and violent. He chases after Chihiro in anger.
+But once No-Face vomits up everything, his demeanor changes.
+No-Face no longer holds anger, and in-fact calmly sits next to Chihiro on the train to Zeniba's house.
+I believe this shows No-Face realized he did not need things to be happy.
 
 
 
