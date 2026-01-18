@@ -28,6 +28,8 @@ a maintainer for this project.
 
 [Crab Castle](https://jacobhaussman.itch.io/crab-castle) - A tower defense game made for Chili Game Jam #3. Placed 5th place out of 99 submissions.
 
+[View and play all games](/games)
+
 ## My Libraries
 [hikari-crescent](https://github.com/hikari-crescent/hikari-crescent) - A framework built on hikari to help make discord bots.
 
