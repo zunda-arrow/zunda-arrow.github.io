@@ -1,16 +1,6 @@
 ---
-import Layout from '../../layouts/page.astro'
-import "../../css/global.css"
-import Gear from "../components/Gear.svelte"
-const { frontmatter } = Astro.props;
+import Game from '../../layouts/game.astro'
 ---
-<Layout>
-  <br>
-  <div style="display: flex; justify-content: center; align-items: middle; z-index: 10000;">
-      <body>
-         <iframe allowFullscreen style="z-index: 100" type="text/html" src="/assets/games/crab-castle/index.html" width="960" height="540" frameborder="0"/>
-      </body>
-  </div>
 
-</Layout>
+<Game title="Crab Castle" path="crab-castle" link="https://jacobhaussman.itch.io/crab-castle"/>
 

@@ -1,0 +1,16 @@
+---
+import Layout from './page.astro'
+const { title, path, link } = Astro.props;
+---
+<Layout>
+  <br>
+  <div style="display: flex; justify-content: center; align-items: middle; z-index: 10000">
+      <div style="display: flex; flex-direction: column">
+		  <body>
+		     <iframe allowfullscreen style="z-index: 100" type="text/html" src={`/assets/games/${path}/index.html`} width="960" height="540" frameborder="0"/>
+		  </body>
+      </div>
+  </div>
+
+</Layout>
+
