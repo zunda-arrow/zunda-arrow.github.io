@@ -2,15 +2,78 @@
 import Layout from './page.astro'
 const { title, path, link } = Astro.props;
 ---
+
 <Layout>
-  <br>
-  <div style="display: flex; justify-content: center; align-items: middle; z-index: 10000">
-      <div style="display: flex; flex-direction: column">
-		  <body>
-		     <iframe allowfullscreen style="z-index: 100" type="text/html" src={`/assets/games/${path}/index.html`} width="960" height="540" frameborder="0"/>
-		  </body>
-      </div>
+  <br />
+
+  <div style="display: flex; justify-content: center">
+    <div
+      id="iframe-wrapper"
+      style="
+        position: relative;
+      "
+    >
+      <iframe
+        id="game-iframe"
+        src={`/assets/games/${path}/index.html`}
+        width="960"
+        height="540"
+        frameborder="0"
+        allowfullscreen
+        style="z-index: 6;"
+      ></iframe>
+
+      <button
+        id="fullscreen-btn"
+        style="
+          color: #cccccc;
+          background-color: #33333355;
+          border-width: 1;
+          border-style: solid;
+          border-color: #000000;
+          position: absolute;
+          bottom: 12px;
+          right: 12px;
+          padding: 0px 0px;
+          font-size: 0px;
+          cursor: pointer;
+          z-index: 5;
+        "
+      >
+        <img src="/public/assets/fullscreen-icon.svg" alt="Fullscreen" width="32" height="32"/>
+      </button>
+    </div>
   </div>
 
+  <script>
+    const wrapper = document.getElementById('iframe-wrapper');
+    const button = document.getElementById('fullscreen-btn');
+    const iframe = document.getElementById('game-iframe');
+
+    button.addEventListener('click', () => {
+      if (!document.fullscreenElement) {
+        wrapper.requestFullscreen();
+      } else {
+        document.exitFullscreen();
+}
+    });
+
+
+	  const query = window.matchMedia('(display-mode: fullscreen)')
+
+	query.addEventListener('change', ({ matches }) => {
+	    if (matches) {
+	        iframe.width = "100%"
+	        iframe.height = "100%"
+	        button.style.visibility = "hidden";
+	        console.log('full screen initiated')
+	    } else {
+	        iframe.width = "960"
+	        iframe.height = "540"
+	        button.style.visibility = "visible";
+	        console.log('full screen canceled')
+	    }
+	});
+  </script>
 </Layout>
 

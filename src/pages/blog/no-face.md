@@ -7,7 +7,9 @@ In the Movie "Spirited Away" by Hayao Miyazaki, No-Face is a spirit with a stran
 No-Face's upper body
 
 ## What is enlightenment
-Explain stages of enlightenmnet
+In this article, the term enlightenment is translated from the Japanese term *satori*(悟り).
+Satori refers to the path to buddhahood.
+To achieve enlightenment means to have reached the end of thepath to buddhahood, and in turn have experienced *kenshou* (見性).
 
 ## The Ocean Surrounding the Bath House
 I believe the the sea that surrounds the bath house is a methaphor for the challanges required to achieve enlightenment.
@@ -54,9 +56,10 @@ No-Face no longer holds anger, and in-fact calmly sits next to Chihiro on the tr
 I believe this shows No-Face realized he did not need things to be happy.
 
 
-
-
 # Sources
+https://en.wikipedia.org/wiki/Enlightenment_in_Buddhism
+https://en.wikipedia.org/wiki/Satori
+https://en.wikipedia.org/wiki/Zen
 https://en.wikipedia.org/wiki/Fruits_of_the_noble_path
 https://en.wikipedia.org/wiki/Fetter_(Buddhism)
 
