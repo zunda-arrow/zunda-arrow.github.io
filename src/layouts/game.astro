@@ -27,20 +27,20 @@ const { title, path, link } = Astro.props;
         id="fullscreen-btn"
         style="
           color: #cccccc;
-          background-color: #33333355;
+          background-color: #cccccc44;
           border-width: 1;
           border-style: solid;
-          border-color: #000000;
+          border-color: #111111;
           position: absolute;
-          bottom: 12px;
-          right: 12px;
+          bottom: 0px;
+          right: 0px;
           padding: 0px 0px;
           font-size: 0px;
           cursor: pointer;
           z-index: 5;
         "
       >
-        <img src="/assets/fullscreen-icon.svg" alt="Fullscreen" width="32" height="32"/>
+        <img src="/assets/fullscreen-icon.svg" alt="Fullscreen" width="32" height="32" style="filter: invert(10%)"/>
       </button>
     </div>
   </div>
