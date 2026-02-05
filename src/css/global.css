@@ -31,6 +31,11 @@ hr {
 .markdown > h2 {
 }
 
+button {
+    background-color: #111111;
+    font-size: 20px;
+}
+
 @media (orientation: landscape) {
     .centered {
       max-width: 650px;

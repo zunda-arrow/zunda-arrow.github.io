@@ -1,0 +1,913 @@
+---
+import Layout from '../../layouts/page.astro'
+import "../../css/global.css"
+import Gear from "../../components/Gear.svelte"
+---
+
+<meta charset="UTF-8">
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+    h1 {
+        text-align: center;
+    }
+    .game-container {
+        text-align: left;
+        font-family: monospace;
+    }
+
+    .result {
+        font-size: 18px;
+        margin-top: 20px;
+    }
+
+    .center {
+    	align-items: center;
+    	display: flex;
+    }
+
+	/* https://css-tricks.com/styling-code-in-and-out-of-blocks/ */
+    .code {
+      display: flex;
+      font-family: MyFancyCustomFont, monospace;
+      font-size: inherit;
+      white-space: pre;
+      background-color: black;
+      color: white;
+    }
+</style>
+
+<body>
+    <h1>Guess The Programming Language!</h1>
+
+    <div class="game-container">
+        <div style="center">
+            <div id="choices"></div>
+            <br>
+            <button id='show-answer' onclick="showAnswer()"> Show Answer </button>
+            <div id="message" class="result"></div>
+            <div class="code content result" id="content"><div/>
+        </div>
+    </div>
+</body>
+<script is:inline>
+const languages = [
+{ name: 'Python', content: `import random
+import math
+class Stats:
+    def __init__(self):
+        self.values=[]
+    def add(self,x):
+        self.values.append(x)
+    def mean(self):
+        return sum(self.values)/len(self.values) if self.values else 0
+    def std(self):
+        m=self.mean()
+        return math.sqrt(sum((v-m)**2 for v in self.values)/len(self.values)) if self.values else 0
+def generate(n,low=0,high=100):
+    return [random.randint(low,high) for _ in range(n)]
+def normalize(data):
+    if not data:
+        return []
+    m=min(data)
+    M=max(data)
+    if M==m:
+        return [0 for _ in data]
+    return [(x-m)/(M-m) for x in data]
+def main():
+    stats=Stats()
+    data=generate(20)
+    for x in data:
+        stats.add(x)
+    norm=normalize(data)
+    print("data:",data)
+    print("mean:",round(stats.mean(),2))
+    print("std:",round(stats.std(),2))
+    print("normalized:",[round(x,2) for x in norm])
+    buckets={}
+    for x in data:
+        k=x//10
+        buckets[k]=buckets.get(k,0)+1
+    for k in sorted(buckets):
+        bar="*"*buckets[k]
+        print(f"{k*10:02d}-{k*10+9:02d} | {bar}")
+if __name__=="__main__":
+    random.seed(42)
+    main()
+def extra():
+    total=0
+    for i in range(10):
+        total+=i*i
+    return total
+result=extra()
+assert result==285
+print("check passed")`},
+            { name: 'JavaScript', content: `class Stats {
+    constructor() {
+        this.values = [];
+    }
+
+    add(x) {
+        this.values.push(x);
+    }
+
+    mean() {
+        if (this.values.length === 0) return 0;
+        const sum = this.values.reduce((acc, val) => acc + val, 0);
+        return sum / this.values.length;
+    }
+
+    max() {
+        return this.values.length === 0 ? 0 : Math.max(...this.values);
+    }
+}
+
+function generate(n) {
+    const data = [];
+    for (let i = 0; i < n; i++) {
+        data.push((i * 37 + 13) % 100);
+    }
+    return data;
+}
+
+function extra() {
+    let total = 0;
+    for (let i = 0; i < 10; i++) {
+        total += i * i;
+    }
+    return total;
+}
+
+function main() {
+    const stats = new Stats();
+    const data = generate(20);
+
+    data.forEach(x => stats.add(x));
+
+    console.log("data:", data);
+    console.log("mean:", stats.mean().toFixed(2));
+    console.log("max:", stats.max());
+
+    const freq = {};
+    data.forEach(x => {
+        freq[x] = (freq[x] || 0) + 1;
+    });
+
+    for (let key in freq) {
+        console.log(\`\${key} -> \${freq[key]}\`);
+    }
+
+    if (extra() === 285) {
+        console.log("check passed");
+    }
+}
+
+main();
+` },
+            { name: 'Java', content: `import java.util.*;
+public class Sample {
+    private List<Integer> values;
+    public Sample() {
+        values = new ArrayList<>();
+    }
+    public void add(int x) {
+        values.add(x);
+    }
+    public double mean() {
+        if (values.isEmpty()) return 0;
+        int sum = 0;
+        for (int v : values) sum += v;
+        return sum / (double) values.size();
+    }
+    public int max() {
+        int m = Integer.MIN_VALUE;
+        for (int v : values) m = Math.max(m, v);
+        return m;
+    }
+    public static List<Integer> generate(int n) {
+        Random r = new Random(42);
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            list.add(r.nextInt(100));
+        }
+        return list;
+    }
+    public static int extra() {
+        int t = 0;
+        for (int i = 0; i < 10; i++) t += i * i;
+        return t;
+    }
+    public static void main(String[] args) {
+        Sample s = new Sample();
+        List<Integer> data = generate(20);
+        for (int x : data) s.add(x);
+        System.out.println("data=" + data);
+        System.out.println("max=" + s.max());
+        Map<Integer,Integer> freq = new HashMap<>();
+        for (int x : data) {
+            freq.put(x, freq.getOrDefault(x, 0) + 1);
+        }
+        for (int k : new TreeSet<>(freq.keySet())) {
+            System.out.println(k + " -> " + freq.get(k));
+        }
+        int check = extra();
+        if (check == 285) System.out.println("ok");
+    }
+}
+` },
+            { name: 'C', content: `#include <stdio.h>
+#include <stdlib.h>
+
+void greetUser(char name[]) {
+    printf("Hello, %s! Welcome to the C programming world.\n", name);
+}
+
+int factorial(int n) {
+    if (n == 0 || n == 1) {
+        return 1;
+    }
+    return n * factorial(n - 1);
+}
+
+void printArray(int arr[], int size) {
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+
+int sumArray(int arr[], int size) {
+    int sum = 0;
+    for (int i = 0; i < size; i++) {
+        sum += arr[i];
+    }
+    return sum;
+}
+
+void reverseArray(int arr[], int size) {
+    int temp;
+    for (int i = 0; i < size / 2; i++) {
+        temp = arr[i];
+        arr[i] = arr[size - 1 - i];
+        arr[size - 1 - i] = temp;
+    }
+}
+
+int main() {
+    // Variables
+    char name[50];
+    int number, result, choice;
+    int arr[] = {1, 2, 3, 4, 5};
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    printf("Enter your name: ");
+    fgets(name, sizeof(name), stdin);
+    greetUser(name);
+
+    // Input: Ask for a number to calculate factorial
+    printf("Enter a number to calculate its factorial: ");
+    scanf("%d", &number);
+    result = factorial(number);
+    printf("Factorial of %d is %d\n", number, result);
+
+    // Array Operations
+    printf("Array elements: ");
+    printArray(arr, size);
+
+    // Sum of Array
+    printf("Sum of array elements: %d\n", sumArray(arr, size));
+
+    // Reverse the array
+    reverseArray(arr, size);
+    printf("Reversed array: ");
+    printArray(arr, size);
+
+    // Menu to choose another operation
+    printf("Choose an option:\n1. Calculate factorial again\n2. Exit\n");
+    scanf("%d", &choice);
+    
+    if (choice == 1) {
+        printf("Enter a number to calculate factorial: ");
+        scanf("%d", &number);
+        result = factorial(number);
+        printf("Factorial of %d is %d\n", number, result);
+    } else {
+        printf("Exiting program...\n");
+    }
+
+    return 0;
+}
+` },
+	{name: 'Haskell', content: `import Data.List (group, sort)
+generate :: Int -> IO [Int]
+generate n = do
+    g <- newStdGen
+    return $ take n (randomRs (0, 99) g)
+
+mean :: [Int] -> Double
+mean xs = fromIntegral (sum xs) / fromIntegral (length xs)
+
+maxValue :: [Int] -> Int
+maxValue = maximum
+
+countFrequency :: [Int] -> [(Int, Int)]
+countFrequency xs = map (\\x -> (head x, length x)) . group . sort $ xs
+
+main :: IO ()
+main = do
+    dataList <- generate 20
+    print ("data: " ++ show dataList)
+    
+    let m = mean dataList
+    let maxVal = maxValue dataList
+    print ("mean: " ++ show m)
+    print ("max: " ++ show maxVal)
+
+    let freq = countFrequency dataList
+    mapM_ (\(x, c) -> print (show x ++ " -> " ++ show c)) freq
+
+    let total = sum [x * x | x <- [0..9]]
+    if total == 285 then putStrLn "check passed" else return ()`}
+,{name: 'Typescript', content: `class Person {
+  name: string;
+  age: number;
+  email: string;
+
+  constructor(name: string, age: number, email: string) {
+    this.name = name;
+    this.age = age;
+    this.email = email;
+  }
+
+  displayInfo(): void {
+    console.log(.Name: ${this.name}.);
+    console.log(.Age: ${this.age}.);
+    console.log(.Email: ${this.email}.);
+  }
+}
+
+const people: Person[] = [];
+
+function addPerson(name: string, age: number, email: string): void {
+  const person = new Person(name, age, email);
+  people.push(person);
+}
+
+function displayAllPeople(): void {
+  if (people.length === 0) {
+    console.log("No people in the list.");
+  } else {
+    people.forEach((person) => person.displayInfo());
+  }
+}
+
+function main(): void {
+  addPerson("Alice", 30, "alice@example.com");
+  addPerson("Bob", 25, "bob@example.com");
+  addPerson("Charlie", 35, "charlie@example.com");
+
+  console.log("Displaying all people:");
+  displayAllPeople();
+}
+
+main();`}, {name: 'Rust', content: `
+use std::collections::HashMap;
+
+struct Stats {
+    values: Vec<i32>,
+}
+
+impl Stats {
+    fn new() -> Self {
+        Stats { values: Vec::new() }
+    }
+
+    fn add(&mut self, x: i32) {
+        self.values.push(x);
+    }
+
+    fn mean(&self) -> f64 {
+        if self.values.is_empty() {
+            return 0.0;
+        }
+        let sum: i32 = self.values.iter().sum();
+        sum as f64 / self.values.len() as f64
+    }
+
+    fn max(&self) -> i32 {
+        *self.values.iter().max().unwrap_or(&0)
+    }
+}
+
+fn generate(n: usize) -> Vec<i32> {
+    let mut data = Vec::new();
+    for i in 0..n {
+        data.push(((i * 37 + 13) % 100) as i32);
+    }
+    data
+}
+
+fn extra() -> i32 {
+    let mut total = 0;
+    for i in 0..10 {
+        total += i * i;
+    }
+    total
+}
+
+fn main() {
+    let mut stats = Stats::new();
+    let data = generate(20);
+
+    for x in &data {
+        stats.add(*x);
+    }
+
+    println!("data: {:?}", data);
+    println!("mean: {:.2}", stats.mean());
+    println!("max: {}", stats.max());
+
+    let mut freq: HashMap<i32, i32> = HashMap::new();
+    for x in data {
+        *freq.entry(x).or_insert(0) += 1;
+    }
+
+    for (k, v) in freq {
+        println!("{} -> {}", k, v);
+    }
+
+    if extra() == 285 {
+        println!("check passed");
+    }}
+`}, {name: "C++", content: `
+#include <iostream>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include <numeric>
+#include <random>
+
+class Stats {
+public:
+    void add(int x) {
+        values.push_back(x);
+    }
+    double mean() const {
+        if (values.empty()) return 0.0;
+        double sum = std::accumulate(values.begin(), values.end(), 0);
+        return sum / values.size();
+    }
+    int max() const {
+        return values.empty() ? 0 : *std::max_element(values.begin(), values.end());
+    }
+private:
+    std::vector<int> values;
+};
+
+std::vector<int> generate(int n) {
+    std::mt19937 rng(42);
+    std::uniform_int_distribution<int> dist(0, 99);
+    std::vector<int> data;
+    for (int i = 0; i < n; ++i)
+        data.push_back(dist(rng));
+    return data;
+}
+
+int extra() {
+    int total = 0;
+    for (int i = 0; i < 10; ++i)
+        total += i * i;
+    return total;
+}
+
+int main() {
+    Stats stats;
+    auto data = generate(20);
+    for (int x : data) stats.add(x);
+
+    std::cout << "data: ";
+    for (int x : data) std::cout << x << " ";
+    std::cout << "\nmean: " << stats.mean();
+    std::cout << "\nmax: " << stats.max() << "\n";
+
+    std::map<int, int> freq;
+    for (int x : data) freq[x]++;
+
+    for (const auto& p : freq)
+        std::cout << p.first << " -> " << p.second << "\n";
+
+    if (extra() == 285)
+        std::cout << "check passed\n";
+    return 0;
+`}, {name: 'C', content: `
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_STUDENTS 50
+#define MAX_NAME_LENGTH 100
+
+struct Student {
+    int id;
+    char name[MAX_NAME_LENGTH];
+    float grade;
+};
+
+void inputStudent(struct Student *student) {
+    printf("Enter student ID: ");
+    scanf("%d", &student->id);
+    getchar();  // To clear the buffer
+
+    printf("Enter student name: ");
+    fgets(student->name, MAX_NAME_LENGTH, stdin);
+    student->name[strcspn(student->name, "\n")] = 0;  // Remove newline character
+
+    printf("Enter student grade: ");
+    scanf("%f", &student->grade);
+}
+
+void displayStudent(struct Student student) {
+    printf("\nStudent ID: %d\n", student.id);
+    printf("Name: %s\n", student.name);
+    printf("Grade: %.2f\n", student.grade);
+}
+
+int main() {
+    struct Student students[MAX_STUDENTS];
+    int count = 0, i;
+
+    printf("Welcome to the Student Information System!\n");
+
+    while (count < MAX_STUDENTS) {
+        char choice;
+        printf("\nDo you want to enter details for a new student? (y/n): ");
+        scanf(" %c", &choice);
+        getchar();  // To clear the buffer
+
+        if (choice == 'y' || choice == 'Y') {
+            inputStudent(&students[count]);
+            count++;
+        } else {
+            break;
+        }
+    }
+
+    printf("\nDisplaying all entered student data:\n");
+    for (i = 0; i < count; i++) {
+        displayStudent(students[i]);
+    }
+
+    printf("\nThank you for using the Student Information System!\n");
+    return 0;
+}
+`}, {name: 'Bash', content: `
+#!/bin/bash
+
+data=()
+for i in {1..20}; do
+  data+=($((RANDOM % 100)))
+done
+
+echo "data: A{data[@]}"
+
+um=0
+for value in "A{data[@]}"; do
+  sum=A((sum + value))
+done
+
+ean=A((sum / A{cho "mean: Amean"
+
+ax=0
+for value in "A{data[@]}"; do
+  if [ Avalue -gt Amax ]; then
+    max=Avalue
+  fi
+done
+echo "max: Amax"
+
+eclare -A freq
+for value in "A{data[@]}"; do
+  ((freq[Avalue]++))
+done
+
+or key in "A{!freq[@]}"; do
+  echo "Akey -> A{freq[Akey]}"
+done
+
+otal=0
+for i in {0..9}; do
+  total=A((total + i * i))
+done
+
+f [ Atotal -eq 285 ]; then
+  echo "check passed"
+fi
+`,},
+{name: 'Command Line', content: `
+user@linux:~$ pwd
+/home/user
+
+user@linux:~$ ls
+Documents  Downloads  Pictures  Music  Videos  Desktop
+
+user@linux:~$ cd Documents/
+
+user@linux:~/Documents$ ls
+project1.txt  notes.md  report.pdf  assignments/
+
+user@linux:~/Documents$ cat project1.txt
+This is the first draft of the project report.
+
+user@linux:~/Documents$ nano notes.md
+# (opens nano text editor)
+
+user@linux:~/Documents$ ls assignments/
+assignment1.pdf  assignment2.docx  assignment3.txt
+
+user@linux:~/Documents$ mv assignment1.pdf /home/user/Desktop/
+
+user@linux:~/Documents$ cp assignment2.docx /home/user/Downloads/
+
+user@linux:~/Documents$ rm assignment3.txt
+
+user@linux:~/Documents$ touch newfile.txt
+
+user@linux:~/Documents$ ls
+newfile.txt  project1.txt  notes.md  report.pdf  assignments/
+
+user@linux:~/Documents$ cat newfile.txt
+(user writes something in the new file)
+
+user@linux:~/Documents$ sudo apt update
+[sudo] password for user: 
+Hit:1 http://archive.ubuntu.com/ubuntu focal InRelease
+Hit:2 http://archive.ubuntu.com/ubuntu focal-updates InRelease
+...
+
+user@linux:~/Documents$ sudo apt upgrade
+Reading package lists... Done
+Building dependency tree       
+...
+
+user@linux:~/Documents$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1       100G  35G   60G  37% /
+
+user@linux:~/Documents$ free -m
+              total        used        free      shared  buff/cache   available
+Mem:            8000        3000        2000        1000        3000        3500
+Swap:           2048         0         2048
+
+user@linux:~/Documents$ top
+top - 10:35:12 up 3 days,  2:12,  1 user,  load average: 0.23, 0.18, 0.15
+Tasks: 203 total,   1 running, 202 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  5.0 us,  3.0 sy,  0.0 ni, 91.5 id,  0.5 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   8000.0 total,   3000.0 free,   2000.0 used,   3000.0 buff/cache
+MiB Swap:   2048.0 total,   2048.0 free,      0.0 used. 
+
+user@linux:~/Documents$ ps aux | grep python
+user       1234  0.0  0.1  246400  15000 ?        S    09:21   0:00 /usr/bin/python3 script.py
+
+user@linux:~/Documents$ kill 1234
+user@linux:~/Documents$ ps aux | grep python
+user       5678  0.0  0.1  246400  15000 ?        S    09:50   0:00 /usr/bin/python3 another_script.py
+
+user@linux:~/Documents$ mkdir new_folder
+
+user@linux:~/Documents$ ls
+new_folder  newfile.txt  project1.txt  notes.md  report.pdf  assignments/
+
+user@linux:~/Documents$ cd new_folder/
+
+user@linux:~/Documents/new_folder$ touch file1.txt file2.txt
+
+user@linux:~/Documents/new_folder$ ls
+file1.txt  file2.txt
+
+user@linux:~/Documents/new_folder$ rm file1.txt
+
+user@linux:~/Documents/new_folder$ ls
+file2.txt
+
+user@linux:~/Documents/new_folder$ mv file2.txt ../file_moved.txt
+
+user@linux:~/Documents$ ls
+file_moved.txt  new_folder  newfile.txt  project1.txt  notes.md  report.pdf  assignments/
+
+user@linux:~/Documents$ exit
+logout
+`}, {name: 'HTML', content: `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Webpage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Webpage</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>Home</h2>
+        <p>This is the homepage of my website. It's built with HTML and styled with CSS.</p>
+        <img src="https://via.placeholder.com/600x300" alt="Placeholder Image">
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am a web developer passionate about creating functional and beautiful websites.</p>
+        <p>My skills include:</p>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+        </ul>
+    </section>
+
+    <section id="services">
+        <h2>My Services</h2>
+        <p>Here are some services I offer:</p>
+        <ol>
+            <li>Web Development</li>
+            <li>UI/UX Design</li>
+            <li>SEO Optimization</li>
+        </ol>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <form action="submit_form.php" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 My Website. All Rights Reserved.</p>
+        <p>Follow us on <a href="#">Twitter</a>, <a href="#">Facebook</a>, and <a href="#">Instagram</a>.</p>
+    </footer>
+</body>
+</html>
+`},
+{name: `CSS`, content: `
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+h1, h2 {
+    margin-top: 0;
+}
+
+/* Section Styles */
+section {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: white;
+    border-radius: 8px;
+}
+
+section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Form Styles */
+form {
+    display: grid;
+    grid-gap: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, textarea {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+`}
+    ];
+
+        // Function to replace characters (mimicking the `replace_char` in Python)
+        function replaceChar(c) {
+            if (c === "\n") return c;
+            if (c === " ") return " ";
+            if (["/", "\\", ",", "_", ".", "(", ")", "{", "}", "<", ">", "*", "+", "-", "^", ";"].includes(c)) return "☐";
+            return "☒";
+        }
+
+        // Function to obfuscate the content
+        function obfuscateText(text) {
+            return text.split("").map(replaceChar).join("");
+        }
+
+        document.getElementById('choices').textContent = 'Your choices are: ' + languages.map(x => x.name).sort().join(', ');
+
+		var randomLang;
+        function reshuffle() {
+            // Pick a random language
+            randomLang = languages[Math.floor(Math.random() * languages.length)];
+            // Obfuscate the content of the chosen language
+            const obfuscatedContent = obfuscateText(randomLang.content);
+
+
+            // Display the obfuscated content
+            document.getElementById('content').textContent = obfuscatedContent;
+
+            // Clear any previous message
+            document.getElementById('message').textContent = '';
+		}
+
+		function showAnswer() {
+			if (document.getElementById('show-answer').textContent == "Reshuffle") {
+                reshuffle()
+                document.getElementById('show-answer').textContent = 'Show Answer';
+                document.getElementById('message').textContent = '';
+                return;
+			}
+
+            document.getElementById('message').textContent = 'The answer is ' + randomLang.name;
+            document.getElementById('content').textContent = randomLang.content;
+            document.getElementById('show-answer').textContent = 'Reshuffle';
+		}
+
+		reshuffle()
+</script>
+
