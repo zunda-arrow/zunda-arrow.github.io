@@ -3,7 +3,7 @@ layout: ../layouts/main.astro
 ---
 
 # About Me
-Hello, I'm Jacob Haussman. I am a Computer Science Major with a Minor in Japanese and Theoretical Mathematics.
+Hello, I'm Jake Haussman. I am a Computer Science Major with a Minor in Japanese and Theoretical Mathematics.
 
 I host my code on [Github](https://github.com/zunda-arrow) and [Codeberg](https://codeberg.org/zunda-arrow).
 
