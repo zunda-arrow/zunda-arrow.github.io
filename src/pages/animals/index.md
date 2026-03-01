@@ -11,6 +11,6 @@ title: Animals
 A hedgehog I met in Japan, named Ginta-kun.
 
 <img src="/assets/animals/rabbits.jpg" width="100%" alt="Rabbits"> </a>
-Rabbits I met on Okunoshima.
+Rabbits I met on Okunoshima, also known as "Rabbit Island".
 
 
