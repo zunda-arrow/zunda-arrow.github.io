@@ -1,0 +1,16 @@
+---
+---
+<script>
+    var span = document.getElementById("urlspan");
+    span.textContent = new URLSearchParams(window.location.search).get("data");
+</script>
+
+
+<html lang="en">
+  <head>
+    <title>QR Data</title>
+  </head>
+  <body>
+    <span id="urlspan"></span>
+  </body>
+</html>
