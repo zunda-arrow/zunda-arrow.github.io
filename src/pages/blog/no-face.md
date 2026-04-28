@@ -12,7 +12,7 @@ Satori refers to the path to buddhahood.
 To achieve enlightenment means to have reached the end of thepath to buddhahood, and in turn have experienced *kenshou* (見性).
 
 ## The Ocean Surrounding the Bath House
-I believe the the sea that surrounds the bath house is a methaphor for the challanges required to achieve enlightenment.
+I believe the the sea that surrounds the bath house is a metaphor for the challenges required to achieve enlightenment.
 The bath house's workers are not enlightened.
 When No-Face showers the workers with fake gold, they are quick to do his bidding.
 The workers are unable to give up physical wealth, which is turn shows they are beholden to their own desires.
@@ -44,7 +44,7 @@ that the final stop of the train is at.
 No-Faces journey starts from the bath house and ends at Zeniba's place. I do not think that No-Face achieves enlightenment
 during the movie, we only see his first few steps after being reborn in the realm of gods.
 No-Face is surrounded by greed at the beginning of the movie, and is infactuated by Chihiro the  first moment he sees her.
-I belive this is because Chihiro is a pure soul.
+I believe this is because Chihiro is a pure soul.
 Unlike the other characters on the bath house island, she can not be swayed by No-Face's fake gold.
 
 When no-face first enters the bath house as a customer, he gives out fake gold to the staff to get everything he wants.
