@@ -31,6 +31,22 @@ hr {
 .markdown > h2 {
 }
 
+
+.astro-code {
+    padding: 10px;
+    background-color: #000000;
+    line-height: 1;
+}
+
+/* Code block font */
+code {
+    font-family: monospace;
+
+}
+code > * > * {
+    font-family: monospace;
+}
+
 button {
     background-color: #111111;
     font-size: 20px;
